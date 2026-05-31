@@ -3,9 +3,9 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-       <img src="{{ $siteSettings->logoUrl() }}" alt="Logo">
-          <span>
-                </span></div>
+          @include('welcome.sections._site-logo', ['variant' => 'footer'])
+          <span></span>
+        </div>
         <p>شريكك في النمو الرقمي. حلول تسويقية مبنية على بيانات وفهم عميق لسوقك.</p>
       </div>
       <div class="footer-col">

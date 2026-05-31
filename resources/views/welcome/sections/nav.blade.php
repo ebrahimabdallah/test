@@ -1,6 +1,6 @@
 ﻿<nav>
   <a href="{{ route('welcome') }}" class="logo" aria-label="العودة للرئيسية">
-    <img src="{{ $siteSettings->logoUrl() }}" alt="Logo">
+    @include('welcome.sections._site-logo', ['variant' => 'nav'])
     <span></span>
   </a>
   <ul class="nav-links">
