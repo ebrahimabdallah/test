@@ -22,32 +22,24 @@
     {{-- لوحة الأداء / صور الهيرو على اليسار --}}
     <div class="hero-visual">
       @if($heroImages->isNotEmpty())
-        @if($heroImages->count() === 1)
-          <img
-            src="{{ $heroImages->first() }}"
-            alt="صورة الهيرو"
-            class="hero-img"
-            loading="eager"
-            decoding="async"
-          >
-        @else
-          <div class="swiper hero-images-swiper" aria-label="صور الهيرو">
-            <div class="swiper-wrapper">
-              @foreach($heroImages as $imageUrl)
-                <div class="swiper-slide">
-                  <img
-                    src="{{ $imageUrl }}"
-                    alt="صورة الهيرو"
-                    class="hero-img"
-                    loading="{{ $loop->first ? 'eager' : 'lazy' }}"
-                    decoding="async"
-                  >
-                </div>
-              @endforeach
-            </div>
-            <div class="hero-images-pagination swiper-pagination"></div>
+        <div class="swiper hero-images-swiper" aria-label="صور الهيرو">
+          <div class="swiper-wrapper">
+            @foreach($heroImages as $imageUrl)
+              <div class="swiper-slide">
+                <img
+                  src="{{ $imageUrl }}"
+                  alt="صورة الهيرو {{ $loop->iteration }}"
+                  class="hero-img"
+                  loading="{{ $loop->first ? 'eager' : 'lazy' }}"
+                  decoding="async"
+                >
+              </div>
+            @endforeach
           </div>
-        @endif
+          @if($heroImages->count() > 1)
+            <div class="hero-images-pagination swiper-pagination"></div>
+          @endif
+        </div>
       @else
       <div class="dash-main dash-main--mockup">
         <div class="dash-analytics-card">

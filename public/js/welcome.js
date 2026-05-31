@@ -612,7 +612,7 @@ if (worksFiltersEl && worksTrackEl) {
   });
 }
 
-// ===== Hero images — swiper when multiple uploads =====
+// ===== Hero images — auto-changing swiper =====
 (function initHeroImagesSwiper() {
   const swiperEl = document.querySelector('.hero-images-swiper');
   if (!swiperEl || typeof Swiper === 'undefined') return;
@@ -620,23 +620,30 @@ if (worksFiltersEl && worksTrackEl) {
   const slideCount = swiperEl.querySelectorAll('.swiper-slide').length;
   if (slideCount <= 1) return;
 
+  const paginationEl = swiperEl.querySelector('.hero-images-pagination');
+
   new Swiper(swiperEl, {
     slidesPerView: 1,
     spaceBetween: 0,
     grabCursor: true,
     rtl: document.documentElement.dir === 'rtl',
-    loop: slideCount > 1,
+    loop: slideCount > 2,
+    rewind: slideCount === 2,
+    speed: 900,
     watchOverflow: true,
     effect: 'fade',
     fadeEffect: { crossFade: true },
     autoplay: {
-      delay: 4500,
+      delay: 4000,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
-    pagination: {
-      el: '.hero-images-pagination',
-      clickable: true,
-    },
+    pagination: paginationEl
+      ? {
+          el: paginationEl,
+          clickable: true,
+        }
+      : undefined,
   });
 })();
 
