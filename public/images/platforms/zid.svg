@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 32" fill="none">
-  <rect width="80" height="32" rx="8" fill="#802BE7"/>
-  <text x="40" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Zid</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="زد">
+  <rect width="32" height="32" rx="8" fill="#802BE7"/>
+  <text x="16" y="21" text-anchor="middle" font-family="Tajawal, Arial, sans-serif" font-size="15" font-weight="800" fill="#fff">زد</text>
 </svg>

@@ -10,14 +10,14 @@ class MarketingPlatforms
     public static function logos(): array
     {
         return [
-            ['name' => 'Salla', 'url' => asset('images/platforms/salla.svg')],
-            ['name' => 'Zid', 'url' => asset('images/platforms/zid.svg')],
-            ['name' => 'Shopify', 'url' => asset('images/platforms/shopify.svg')],
-            ['name' => 'Meta', 'url' => asset('images/platforms/meta.svg')],
-            ['name' => 'Google Ads', 'url' => asset('images/platforms/google-ads.svg')],
-            ['name' => 'TikTok', 'url' => asset('images/platforms/tiktok.svg')],
-            ['name' => 'Snapchat', 'url' => asset('images/platforms/snapchat.svg')],
-            ['name' => 'WooCommerce', 'url' => asset('images/platforms/woocommerce.svg')],
+            ['name' => 'سلة', 'url' => asset('images/platforms/salla.svg')],
+            ['name' => 'زد', 'url' => asset('images/platforms/zid.svg')],
+            ['name' => 'شوبيفاي', 'url' => asset('images/platforms/shopify.svg')],
+            ['name' => 'ميتا', 'url' => asset('images/platforms/meta.svg')],
+            ['name' => 'إعلانات جوجل', 'url' => asset('images/platforms/google-ads.svg')],
+            ['name' => 'تيك توك', 'url' => asset('images/platforms/tiktok.svg')],
+            ['name' => 'سناب شات', 'url' => asset('images/platforms/snapchat.svg')],
+            ['name' => 'ووكومرس', 'url' => asset('images/platforms/woocommerce.svg')],
         ];
     }
 }

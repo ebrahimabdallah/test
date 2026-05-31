@@ -631,7 +631,7 @@ if (worksFiltersEl && worksTrackEl) {
     grabCursor: true,
     allowTouchMove: true,
     watchOverflow: true,
-    rtl: false,
+    rtl: document.documentElement.dir === 'rtl',
     initialSlide: 0,
     centeredSlides: false,
     autoplay: loop
