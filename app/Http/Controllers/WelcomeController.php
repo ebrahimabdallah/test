@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Hero;
 use App\Models\Partner;
 use App\Models\Testmoianl;
 use App\Models\Works;
@@ -30,6 +31,7 @@ class WelcomeController extends Controller
 
         return view('welcome', [
             'blogs' => Blog::query()->published()->limit(6)->get(),
+            'heroImages' => Hero::settings()->imageUrls(),
             'partners' => $partners,
             'partnerRows' => $partnerRows,
             'partnersCount' => $partners->count(),

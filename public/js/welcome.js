@@ -612,6 +612,34 @@ if (worksFiltersEl && worksTrackEl) {
   });
 }
 
+// ===== Hero images — swiper when multiple uploads =====
+(function initHeroImagesSwiper() {
+  const swiperEl = document.querySelector('.hero-images-swiper');
+  if (!swiperEl || typeof Swiper === 'undefined') return;
+
+  const slideCount = swiperEl.querySelectorAll('.swiper-slide').length;
+  if (slideCount <= 1) return;
+
+  new Swiper(swiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    grabCursor: true,
+    rtl: document.documentElement.dir === 'rtl',
+    loop: slideCount > 1,
+    watchOverflow: true,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.hero-images-pagination',
+      clickable: true,
+    },
+  });
+})();
+
 // ===== Hero partners — marquee swiper on line below dashboard =====
 (function initHeroPartnersSwiper() {
   const swiperEl = document.querySelector('.hero-partners-swiper');
