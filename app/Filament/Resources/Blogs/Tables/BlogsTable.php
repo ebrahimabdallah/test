@@ -19,7 +19,8 @@ class BlogsTable
         return $table
             ->columns([
                 ImageColumn::make('featured_image')
-                    ->label('الصورة'),
+                    ->label('الصورة')
+                    ->disk('public'),
                 TextColumn::make('title')
                     ->label('العنوان')
                     ->searchable()

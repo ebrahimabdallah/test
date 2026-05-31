@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Support\ResolvesPublicStorageUrl;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+    use ResolvesPublicStorageUrl;
+
     protected $fillable = [
         'title',
         'slug',
@@ -52,28 +55,7 @@ class Blog extends Model
 
     public function featuredImageUrl(): ?string
     {
-        if (! filled($this->featured_image)) {
-            return null;
-        }
-
-        $path = is_array($this->featured_image)
-            ? ($this->featured_image[0] ?? '')
-            : $this->featured_image;
-
-        if (! is_string($path) || $path === '') {
-            return null;
-        }
-
-        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
-            return $path;
-        }
-
-        $path = ltrim($path, '/');
-        if (str_starts_with($path, 'storage/')) {
-            $path = substr($path, strlen('storage/'));
-        }
-
-        return asset('storage/'.$path);
+        return self::resolvePublicStorageUrl($this->featured_image);
     }
 
     public function formattedPublishedDate(): ?string

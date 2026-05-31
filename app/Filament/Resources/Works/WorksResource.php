@@ -20,6 +20,14 @@ class WorksResource extends Resource
 {
     protected static ?string $model = Works::class;
 
+    protected static ?string $navigationLabel = 'الأعمال';
+
+    protected static ?string $modelLabel = 'عمل';
+
+    protected static ?string $pluralModelLabel = 'الأعمال';
+
+    protected static bool $hasTitleCaseModelLabel = false;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema

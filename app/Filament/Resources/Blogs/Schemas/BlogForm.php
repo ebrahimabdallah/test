@@ -47,7 +47,9 @@ class BlogForm
                 FileUpload::make('featured_image')
                     ->label('صورة مميزة')
                     ->image()
-                    ->directory('blogs'),
+                    ->disk('public')
+                    ->directory('blogs')
+                    ->visibility('public'),
                 RichEditor::make('content')
                     ->label('المحتوى')
                     ->required()

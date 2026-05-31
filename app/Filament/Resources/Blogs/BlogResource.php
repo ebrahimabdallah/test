@@ -20,6 +20,14 @@ class BlogResource extends Resource
 {
     protected static ?string $model = Blog::class;
 
+    protected static ?string $navigationLabel = 'المدونة';
+
+    protected static ?string $modelLabel = 'مقال';
+
+    protected static ?string $pluralModelLabel = 'المقالات';
+
+    protected static bool $hasTitleCaseModelLabel = false;
+
     /** لوحة الإدارة تستخدم المعرّف الرقمي في الرابط حتى لا يتأثر عند تغيير الـ slug */
     protected static ?string $recordRouteKeyName = 'id';
 

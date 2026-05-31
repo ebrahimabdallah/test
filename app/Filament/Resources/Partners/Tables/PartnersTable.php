@@ -1,40 +1,33 @@
 <?php
 
-namespace App\Filament\Resources\Works\Tables;
+namespace App\Filament\Resources\Partners\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
 
-class WorksTable
+class PartnersTable
 {
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('order')
+            ->reorderable('order')
             ->columns([
-                TextColumn::make('category')
-                    ->label('القسم')
-                    ->formatStateUsing(fn (string $state): string => match ($state) {
-                        'ecommerce' => 'نتائج الحملات الإعلانية',
-                        'restaurants' => 'نتائج السوشيال ميديا',
-                        'systems' => 'نتائج محركات البحث',
-                        default => $state,
-                    })
-                    ->searchable()
-                    ->sortable(),
                 ImageColumn::make('image')
-                    ->label('الصورة')
+                    ->label('الشعار')
                     ->disk('public'),
-                TextColumn::make('name')
-                    ->label('اسم العمل')
-                    ->searchable()
-                    ->formatStateUsing(fn ($state) => Str::limit(strip_tags($state), 100)),
-
+                IconColumn::make('is_active')
+                    ->label('نشط')
+                    ->boolean(),
+                TextColumn::make('order')
+                    ->label('الترتيب')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -48,7 +41,6 @@ class WorksTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([

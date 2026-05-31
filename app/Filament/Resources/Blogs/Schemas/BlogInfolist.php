@@ -25,7 +25,8 @@ class BlogInfolist
                     ->dateTime()
                     ->placeholder('-'),
                 ImageEntry::make('featured_image')
-                    ->label('صورة مميزة'),
+                    ->label('صورة مميزة')
+                    ->disk('public'),
                 TextEntry::make('excerpt')
                     ->label('مقتطف')
                     ->placeholder('-')
