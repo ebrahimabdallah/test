@@ -709,7 +709,7 @@ if (worksFiltersEl && worksTrackEl) {
 
     new Swiper(el, {
       slidesPerView: 'auto',
-      spaceBetween: 12,
+      spaceBetween: 20,
       loop,
       loopAdditionalSlides: loop ? slideCount : 0,
       speed: rowSpeed,
@@ -740,10 +740,10 @@ if (worksFiltersEl && worksTrackEl) {
         : false,
       breakpoints: {
         768: {
-          spaceBetween: 14,
+          spaceBetween: 24,
         },
         1200: {
-          spaceBetween: 16,
+          spaceBetween: 28,
         },
       },
     });

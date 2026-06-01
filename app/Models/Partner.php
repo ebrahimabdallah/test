@@ -12,7 +12,7 @@ class Partner extends Model
 {
     use ResolvesPublicStorageUrl;
 
-    public const MARQUEE_ROW_COUNT = 3;
+    public const MARQUEE_ROW_COUNT = 2;
 
     protected $fillable = [
         'image',
@@ -78,7 +78,7 @@ class Partner extends Model
     }
 
     /**
-     * Distribute partners across up to 3 rows (round-robin). Each partner appears once.
+     * Distribute partners across up to 2 rows (round-robin). Each partner appears once.
      * Rows with no partners are omitted.
      *
      * @param  Collection<int, static>|EloquentCollection<int, static>|null  $partners

@@ -30,7 +30,7 @@
             </div>
             <div class="channel-info">
               <div class="channel-label">المقر</div>
-              <div class="channel-value">الرياض، المملكة العربية السعودية</div>
+              <div class="channel-value">الجبيل، المملكة العربية السعودية</div>
             </div>
           </div>
         </div>

@@ -1560,23 +1560,26 @@
     z-index:2;
     display:flex;
     flex-direction:column;
-    gap:1rem;
-    margin:0 -4vw;
-    padding:0 4vw;
+    gap:1.25rem;
+    margin:0 -4vw 0 0;
+    padding:0 4vw 0 clamp(2rem, 6vw, 5rem);
     direction:ltr;
   }
   .partners-swiper{
     overflow:hidden;
     width:100%;
     direction:ltr;
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-    mask-image:linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    padding-left:clamp(.75rem, 2vw, 1.25rem);
+    -webkit-mask-image:linear-gradient(to right, #000 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image:linear-gradient(to right, #000 0%, #000 10%, #000 90%, transparent 100%);
   }
   .partners-swiper--row-2{
     margin-top:.15rem;
   }
   .partners-swiper .swiper-wrapper{
+    padding-left:clamp(.5rem, 1.5vw, 1rem);
     transition-timing-function:linear !important;
+    box-sizing:border-box;
   }
   .partners-swiper .swiper-slide{
     width:auto;
@@ -1589,13 +1592,13 @@
     align-items:center;
     justify-content:center;
   }
-  /* Salla-style logo tile — compact rounded square */
+  /* Salla-style logo tile — 2 rows, ~104px tiles */
   .partner-inner{
-    width:56px;
-    height:56px;
-    border-radius:14px;
+    width:104px;
+    height:104px;
+    border-radius:24px;
     background:#ffffff;
-    border:1px solid rgba(0,0,0,.06);
+    border:1px solid rgba(0,0,0,.08);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1608,8 +1611,8 @@
   }
   .partner-inner-logo{
     background:#ffffff;
-    border-color:rgba(0,0,0,.06);
-    padding:8px;
+    border-color:rgba(0,0,0,.08);
+    padding:12px;
   }
   .partner-logo-img{
     width:100%;
@@ -2787,8 +2790,9 @@
 
     /* Partners — tablet */
     .partners{padding:5rem 4vw;}
-    .partners-swiper-rows{gap:1rem;}
-    .partner-inner{width:52px;height:52px;border-radius:12px;padding:7px;}
+    .partners-swiper-rows{gap:1.1rem;}
+    .partner-inner{width:96px;height:96px;border-radius:22px;}
+    .partner-inner-logo{padding:10px;}
   }
   @keyframes mapMobileItemIn{
     from{opacity:0;transform:translateY(18px) scale(.96);filter:blur(6px);}
@@ -2926,10 +2930,11 @@
     .partners{padding:4rem 5vw;}
     .partners-swiper-rows{
       gap:.85rem;
-      margin:0 -5vw;
-      padding:0 5vw;
+      margin:0 -5vw 0 0;
+      padding:0 5vw 0 clamp(1.5rem, 8vw, 4rem);
     }
-    .partner-inner{width:48px;height:48px;border-radius:11px;padding:6px;}
+    .partner-inner{width:96px;height:96px;border-radius:22px;}
+    .partner-inner-logo{padding:10px;}
   }
 
   @media (max-width: 520px){
