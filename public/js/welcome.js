@@ -161,10 +161,10 @@ function startRoadmapAnimation() {
   setTimeout(() => { segIdx = 0; runSegment(); }, 300);
 }
 
-// Smooth scroll for nav section links
-document.querySelectorAll('.nav-links a[href*="#"]').forEach(link => {
+// Smooth scroll for in-page anchors (nav sections + logo home)
+document.querySelectorAll('.nav-links a[href*="#"], a.logo[href*="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    const url = new URL(link.href);
+    const url = new URL(link.href, window.location.href);
     const hash = url.hash;
     if (!hash) return;
 
@@ -174,7 +174,7 @@ document.querySelectorAll('.nav-links a[href*="#"]').forEach(link => {
     if (target && onSamePage) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
-      history.replaceState(null, '', hash);
+      history.replaceState(null, '', url.pathname + url.search + hash);
       document.querySelector('nav')?.classList.remove('menu-open');
       document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
     }

@@ -1,5 +1,5 @@
 ﻿<nav>
-  <a href="{{ route('welcome') }}" class="logo" aria-label="العودة للرئيسية">
+  <a href="{{ route('welcome') }}#hero" class="logo" aria-label="العودة للرئيسية">
     @include('welcome.sections._site-logo', ['variant' => 'nav'])
     <span></span>
   </a>

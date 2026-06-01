@@ -1,4 +1,4 @@
-﻿<section class="hero">
+﻿<section class="hero" id="hero">
   <div class="hero-grid">
 
     {{-- النص على اليمين (أول عمود في RTL) --}}
